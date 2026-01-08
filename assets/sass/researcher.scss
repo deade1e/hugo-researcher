@@ -1,9 +1,10 @@
-// Sizes
+// Size/
 $max-width: {{ .Param "style.pageWidth" | default "750px;" }};
 $avatar-size: {{ .Param "style.avatarSize" | default "90px;" }};
 
 // Colors
-$black: {{ .Param "style.colorBlack" | default "#222222" }};
+$dark: {{ .Param "style.colorDark" | default "#111111" }};
+$light: {{ .Param "style.colorLight" | default "#eeeeee" }};
 $red: {{ .Param "style.colorRed" | default "#dc3545" }};
 
 // Font
@@ -26,62 +27,78 @@ $y-medium: 1.0rem;
         text-decoration: underline;
     }
 }
+
 %link-dark {
-    color: $black;
+    color: $light;
     text-decoration: none;
     & * {
-        color: $black;
+        color: $light;
     }
     &:hover {
-        color: $black;
+        color: $light;
         text-decoration: underline;
     }
 }
+
 %table-cell {
-    border: 1px solid #cccccc;
+    border: 1px solid $light;
     padding: 6px 12px;
     text-align: left;
 }
 
 // Style
 * {
-    color: $black;
+    color: $light;
     font-family: $font-family;
     font-size: $font-size;
     line-height: 1.2;
 }
+
+body {
+    background-color: $dark;
+}
+
 .container {
     max-width: $max-width;
 }
+
 .navbar-brand {
     @extend %link-dark;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
+
 .nav-link {
     @extend %link-default;
 }
+
 #content {
+
     a {
         @extend %link-default;
     }
+
     p {
         margin-bottom: $y-small;
     }
+
     h1, h2, h3, h4, h5, h6 {
         font-size: medium;
         font-weight: bold;
         margin: $y-medium 0 $y-small 0;
     }
+
     @for $i from 1 through 4 {
         h#{$i} {
             font-size: 1.2rem + 0.2 * (4 - $i);
         }
     }
+
     img {
         display: block;
         margin: $y-medium auto;
         max-width: 100%;
     }
+
     .avatar > img {
         border-radius: 50%;
         float: right;
@@ -89,6 +106,7 @@ $y-medium: 1.0rem;
         height: $avatar-size;
         width: $avatar-size;
     }
+
     ol {
         counter-reset: list;
         list-style: none;
@@ -104,9 +122,11 @@ $y-medium: 1.0rem;
             padding-right: .5em;
         }
     }
+
     .container > ol, .footnotes > ol {
         padding-left: 0;
     }
+
     ul {
         list-style: inside;
         padding-left: 2rem;
@@ -115,9 +135,11 @@ $y-medium: 1.0rem;
             margin-left: 1em;
         }
     }
+
     .container > ul, .footnotes > ul {
         padding-left: 0;
     }
+
     table {
         margin: $y-medium auto;
         width: 100%;
@@ -132,22 +154,25 @@ $y-medium: 1.0rem;
             background-color: #f8f8f8;
         }
     }
+
     blockquote {
         border-left: 4px solid;
         font-style: italic;
         margin: $y-medium 0;
         padding: 8px 8px;
     }
+
     code {
-        color: $black;
-        background-color: #f8f8f8;
-        border: 1px solid #cccccc;
-        border-radius: 10%;
+        color: $light;
+        background-color: $dark;
+        border: 1px solid $light;
         padding: 0px 4px;
     }
+
     pre code {
         all: unset;
     }
+
     .highlight {
         margin: $y-medium auto;
         & > pre {
@@ -155,6 +180,7 @@ $y-medium: 1.0rem;
         }
     }
 }
+
 #footer {
     a {
         @extend %link-dark;
