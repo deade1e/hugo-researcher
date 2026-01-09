@@ -165,8 +165,7 @@ body {
 
     code {
         color: $light;
-        background-color: $dark;
-        border: 1px solid $light;
+        background-color: lighten($dark, 15%);
         padding: 0px 4px;
         border-radius: 3px;
     }
