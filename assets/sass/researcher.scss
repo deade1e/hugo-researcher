@@ -67,6 +67,10 @@ body {
     font-size: 1.5rem;
 }
 
+.navbar-brand img {
+  max-height: 50px;
+}
+
 .nav-link {
     @extend %link-default;
 }
@@ -150,9 +154,6 @@ body {
         & td {
             @extend %table-cell;
         }
-        & tr:nth-child(2n) {
-            background-color: #f8f8f8;
-        }
     }
 
     blockquote {
@@ -167,6 +168,7 @@ body {
         background-color: $dark;
         border: 1px solid $light;
         padding: 0px 4px;
+        border-radius: 3px;
     }
 
     pre code {
@@ -178,6 +180,8 @@ body {
         & > pre {
             padding: 8px 8px;
         }
+        border: 1px dashed $light;
+        border-radius: 10px;
     }
 }
 
