@@ -184,6 +184,12 @@ body {
     }
 }
 
+@media print {
+  #header {
+    display: none;
+  }
+}
+
 #footer {
     a {
         @extend %link-dark;
