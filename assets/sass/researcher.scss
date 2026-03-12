@@ -75,10 +75,21 @@ body {
     @extend %link-default;
 }
 
+.skill {
+    color: $red;
+}
+
 #content {
 
     a {
         @extend %link-default;
+        text-decoration: none;
+        border-bottom: 1px solid $red;
+        padding-bottom: 1px;
+    }
+
+    a:hover {
+        text-decoration: none;
     }
 
     p {
@@ -89,6 +100,10 @@ body {
         font-size: medium;
         font-weight: bold;
         margin: $y-medium 0 $y-small 0;
+    }
+
+    h2 {
+        text-transform: uppercase;
     }
 
     @for $i from 1 through 4 {
