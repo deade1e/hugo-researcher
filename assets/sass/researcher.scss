@@ -127,7 +127,7 @@ body {
     }
 
     ol {
-        counter-reset: list;
+        counter-reset: list -1;
         list-style: none;
         padding-left: 2rem;
         & > li {
