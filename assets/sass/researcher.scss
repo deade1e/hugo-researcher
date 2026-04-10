@@ -3,8 +3,8 @@ $max-width: {{ .Param "style.pageWidth" | default "750px;" }};
 $avatar-size: {{ .Param "style.avatarSize" | default "90px;" }};
 
 // Colors
-$dark: {{ .Param "style.colorDark" | default "#111111" }};
-$light: {{ .Param "style.colorLight" | default "#eeeeee" }};
+$bgcolor: {{ .Param "style.colorDark" | default "#111111" }};
+$fgcolor: {{ .Param "style.colorLight" | default "#eeeeee" }};
 $red: {{ .Param "style.colorRed" | default "#dc3545" }};
 
 // Font
@@ -29,33 +29,33 @@ $y-medium: 1.0rem;
 }
 
 %link-dark {
-    color: $light;
+    color: $fgcolor;
     text-decoration: none;
     & * {
-        color: $light;
+        color: $fgcolor;
     }
     &:hover {
-        color: $light;
+        color: $fgcolor;
         text-decoration: underline;
     }
 }
 
 %table-cell {
-    border: 1px solid $light;
+    border: 1px solid $fgcolor;
     padding: 6px 12px;
     text-align: left;
 }
 
 // Style
 * {
-    color: $light;
+    color: $fgcolor;
     font-family: $font-family;
     font-size: $font-size;
     line-height: 1.2;
 }
 
 body {
-    background-color: $dark;
+    background-color: $bgcolor;
 }
 
 .container {
@@ -179,8 +179,8 @@ body {
     }
 
     code {
-        color: $light;
-        background-color: lighten($dark, 15%);
+        color: $fgcolor;
+        background-color: lighten($bgcolor, 15%);
         padding: 0px 4px;
         border-radius: 3px;
     }
@@ -193,8 +193,9 @@ body {
         margin: $y-medium auto;
         & > pre {
             padding: 8px 8px;
+            margin-bottom: 0;
         }
-        border: 1px dashed $light;
+        border: 1px dashed $fgcolor;
         border-radius: 10px;
     }
 }
