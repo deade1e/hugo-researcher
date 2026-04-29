@@ -180,7 +180,8 @@ body {
 
     code {
         color: $fgcolor;
-        background-color: darken($bgcolor, 7%);
+        background-color: darken($bgcolor, 10%);
+        border: 1px solid darken($bgcolor, 20%);
         padding: 0px 4px;
         border-radius: 3px;
     }
