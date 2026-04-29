@@ -1,5 +1,14 @@
 {{ define "main" }}
 <div class="container">
+    {{ if eq .Type "posts" }}
+        <h1> {{.Title}} </h1>
+        <p>
+        <b>Published</b>: {{ .Date.Format "2006-01-02" }}<br/>
+        <b>Tags</b>: {{range .Params.tags }} <a href="/tags/{{.}}">#{{.}}</a> {{end}}<br/>
+        <b>Reading time</b>: {{ .ReadingTime }} minutes<br/>
+        <b>Words</b>: {{ .WordCount }}
+        </p>
+    {{ end }}
     {{ .Content }}
 </div>
 {{ end }}
